@@ -153,10 +153,11 @@ const startDraw = (e) => {
     });
 
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    drawing(e)
 }
 
 const drawing = (e) => {
-    if(!isDrawing) return;
+    if(!isDrawing || e.buttons !== 1) return;
     ctx.putImageData(snapshot, 0, 0);
 
     const x = e.offsetX * devicePixelRatio;
@@ -244,6 +245,8 @@ saveImg.addEventListener("click", () => {
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("mouseleave", () => isDrawing = false);
+canvas.addEventListener("mouseout", () => isDrawing = false);
 
 function showMessage(message) {
     var completeMsg = document.getElementById('completeMsgText');
