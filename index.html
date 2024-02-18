@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mayan Glyphs Project</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="completeMsg">
+        <span id="completeMsgText"></span>
+        <button id="closeMsg">X</button>
+    </div>
+    
+    <div class="content">
+        <div class="intro-section">
+            <img id="logo" src="src/svg/18-B{}ALAM.svg">
+            <h2>Mayan Glyphs Project</h2>
+            <p>
+                I am on a mission to collect drawings of Mayan glyphs, aiming to keep this incredible civilization's history alive. Every drawing you send will be used strictly for educational reasons, making history accessible and engaging for everyone involved. This initiative is also going to be important for history and machine learning professionals, providing valuable data to further our understanding of Mayan culture and to develop new technologies for deciphering ancient scripts.
+            </p>            
+        </div>
+        <div class="container">
+            <section class="drawing-board">
+                <img id="placeholder-glyph" src="" alt="Glyph Image" style="display:none;">
+                <canvas id="canvas" width="600" height="400"></canvas>
+            </section>
+            <section class="tools-board">
+                <div class="row">
+                    <ul class="options">
+                        <li class="option active tool" id="brush">
+                            <img src="./icons/brush.svg" alt="">
+                        </li>
+                        <li class="option tool" id="eraser">
+                            <img src="./icons/eraser.svg" alt="">
+                        </li>
+                    </ul>
+                    <input type="range" id="size-slider" min="1" max="30" value="5">
+                </div>
+                <!-- <div class="row colors">
+                    <ul class="options">
+                        <li class="option"></li>
+                        <li class="option selected"></li>
+                        <li class="option"></li>
+                        <li class="option"></li>
+                        <li class="option">
+                            <input type="color" id="color-picker" value="#4A98F7">
+                        </li>
+                    </ul>
+                </div> -->
+                <div class="row buttons">
+                    <button class="clear-canvas">Clear Canvas</button>
+                    <button class="save-img">Save As Image</button>
+                    <button class="save-img" id="submit">Submit Drawing</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- <div>
+        <canvas id="testCanvas" width="600" height="400" style="border:1px solid #000;"></canvas>
+        <button id="testDrawButton">Test Draw Strokes</button>
+    </div> -->
+    <div class="loader" style="display: none;"></div>
+
+    <div id="imageGrid" class="image-grid">
+    </div>
+</body>
+
+</html>
