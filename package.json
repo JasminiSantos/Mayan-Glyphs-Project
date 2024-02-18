@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase": "^10.8.0",
+    "firebase-storage": "^1.0.0"
+  }
+}
