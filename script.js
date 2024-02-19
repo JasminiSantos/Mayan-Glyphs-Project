@@ -342,4 +342,33 @@ const uploadProcess = async (file, fileName, metadata) => {
     });
 };
 
+// for mobile interactions
+
+canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    startDraw({
+        offsetX: e.touches[0].clientX - canvas.getBoundingClientRect().left,
+        offsetY: e.touches[0].clientY - canvas.getBoundingClientRect().top,
+        buttons: 1
+    });
+});
+
+canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    drawing({
+        offsetX: e.touches[0].clientX - canvas.getBoundingClientRect().left,
+        offsetY: e.touches[0].clientY - canvas.getBoundingClientRect().top,
+        buttons: 1
+    });
+});
+
+canvas.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    isDrawing = false;
+});
+
+canvas.addEventListener("touchcancel", (e) => {
+    isDrawing = false;
+});
+
 fetchImages();
