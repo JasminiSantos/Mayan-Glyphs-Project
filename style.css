@@ -6,6 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body {
+  font-size: 18px;
   background: #F4EAD5;
   align-items: center;
   justify-content: center;
@@ -304,7 +305,7 @@ user-select: none;
   .intro-section p {
     margin: 10px;
     font-size: 14px;
-}
+  }
 
 
   .intro-section, .container, .image-grid {
@@ -358,6 +359,14 @@ user-select: none;
 
 /* iPad/tablet screens */
 @media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .intro-section h2 {
+    text-align: center;
+  }
+
   .content {
       flex-direction: column;
       align-items: center;
@@ -385,7 +394,7 @@ user-select: none;
 
   .drawing-board canvas {
       width: 100%;
-      height: auto;
+      height: 100%;
   }
 
   .tools-board {
