@@ -46,6 +46,11 @@ function displayImages(imageUrls) {
         let img = document.createElement('img');
         img.src = url;
         img.alt = 'Mayan Glyph';
+        img.style.width = '100%';
+        img.style.height = 'auto';
+        img.style.objectFit = 'cover';
+        img.style.maxWidth = '200px';
+        img.style.maxHeight = '200px';
 
         imageGrid.appendChild(img);
         

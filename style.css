@@ -38,7 +38,6 @@ body {
   position: relative;
   width: 600px;
   height: 400px;
-  /* border: 1px solid #ccc; */
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -291,7 +290,7 @@ img {
 user-select: none;
 }
 
-/* responsividade para mobile */
+/* mobile screens */
 
 @media (max-width: 768px) {
   .content {
@@ -327,8 +326,8 @@ user-select: none;
   }
 
   .drawing-board {
-      height: auto;
-      aspect-ratio: 3 / 2;
+    height: auto;
+    aspect-ratio: 3/2;
   }
 
   .drawing-board canvas {
@@ -354,5 +353,57 @@ user-select: none;
 
   .image-grid {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+/* iPad/tablet screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+  }
+
+  .intro-section, .container, .image-grid {
+      width: 95%;
+      max-width: none;
+  }
+
+  #logo {
+      width: 120px;
+  }
+
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .drawing-board {
+    width: 90%; 
+    aspect-ratio: 16 / 9;
+  }
+
+  .drawing-board canvas {
+      width: 100%;
+      height: auto;
+  }
+
+  .tools-board {
+      order: 3;
+      width: 90%;
+      padding: 15px;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .tools-board .row {
+      width: 100%;
+      justify-content: space-evenly;
+  }
+
+  .image-grid {
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
