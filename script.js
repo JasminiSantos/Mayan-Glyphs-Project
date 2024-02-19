@@ -29,7 +29,7 @@ async function fetchImages() {
         [urls[i], urls[j]] = [urls[j], urls[i]];
       }
   
-      const selectedUrls = urls.slice(0, 35);
+      const selectedUrls = urls.slice(0, 20);
       displayImages(selectedUrls);
     } catch (error) {
       console.error("Error fetching images:", error);

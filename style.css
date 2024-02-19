@@ -290,3 +290,69 @@ img {
 -o-user-select: none;
 user-select: none;
 }
+
+/* responsividade para mobile */
+
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .intro-section h2 {
+    text-align: center;
+  }
+  .intro-section p {
+    margin: 10px;
+    font-size: 14px;
+}
+
+
+  .intro-section, .container, .image-grid {
+      width: 90%;
+      max-width: none;
+  }
+
+  #logo {
+      width: 100px;
+  }
+
+  .container {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .drawing-board, .tools-board {
+      width: 100%;
+  }
+
+  .drawing-board {
+      height: auto;
+      aspect-ratio: 3 / 2;
+  }
+
+  .drawing-board canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tools-board {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+  }
+
+  .tools-board .row {
+      width: 100%;
+      justify-content: space-around;
+  }
+
+  .tools-board .row .options, .tools-board .row.buttons {
+      justify-content: center;
+  }
+
+  .image-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
