@@ -90,10 +90,15 @@ ctx = canvas.getContext("2d");
 
 let devicePixelRatio = window.devicePixelRatio || 1;
 
+const baseBrushWidth = 5;
+let brushWidth = baseBrushWidth * (window.devicePixelRatio > 1 ? window.devicePixelRatio : 1);
+const maxDPI = 2;
+let scale = Math.min(window.devicePixelRatio, maxDPI);
+
 let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = "brush",
-brushWidth = 5,
+// brushWidth = 5,
 selectedColor = "#000";
 selectedDrawingName = ""
 let strokes = [];
@@ -106,13 +111,25 @@ let strokes = [];
 //     drawStrokesFromData(testCtx, strokes);
 // });
 
+// window.addEventListener("load", () => {
+//     canvas.width = canvas.offsetWidth * devicePixelRatio;
+//     canvas.height = canvas.offsetHeight * devicePixelRatio;
+//     ctx.scale(devicePixelRatio, devicePixelRatio);
+//     canvas.style.width = canvas.offsetWidth + 'px';
+//     canvas.style.height = canvas.offsetHeight + 'px';
+//     brushWidth = 5 * devicePixelRatio;
+//     ctx.lineJoin = 'round';
+//     ctx.lineCap = 'round';
+// });
+
+
 window.addEventListener("load", () => {
-    canvas.width = canvas.offsetWidth * devicePixelRatio;
-    canvas.height = canvas.offsetHeight * devicePixelRatio;
-    ctx.scale(devicePixelRatio, devicePixelRatio);
+    canvas.width = canvas.offsetWidth * scale;
+    canvas.height = canvas.offsetHeight * scale;
+    ctx.scale(scale, scale);
     canvas.style.width = canvas.offsetWidth + 'px';
     canvas.style.height = canvas.offsetHeight + 'px';
-    brushWidth = 5 * devicePixelRatio;
+    ctx.lineWidth = brushWidth;
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
 });
