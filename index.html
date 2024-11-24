@@ -16,15 +16,40 @@
         <span id="completeMsgText"></span>
         <button id="closeMsg">X</button>
     </div>
-    
-    <div class="content">
-        <div class="intro-section">
-            <img id="logo" src="src/svg/45-KUCH@AB{}AK.svg">
-            <h2>Ink of The Ancient Stones</h2>
-            <p>
-                I am on a mission to collect drawings of Mayan glyphs, aiming to keep this incredible civilization's history alive. Every drawing you send will be used strictly for educational reasons, making history accessible and engaging for everyone involved. This initiative is also going to be important for history and machine learning professionals, providing valuable data to further our understanding of Mayan culture and to develop new technologies for deciphering ancient scripts.
-            </p>            
+
+    <header>
+        <div class="nav-container">
+            <img src="src/svg/45-KUCH@AB{}AK.svg" alt="Logo" class="logo">
+            <button class="hamburger" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#content">Canvas</a></li>
+                    <li><a href="#imageGrid">Gallery</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+    
+    
+
+    <div id="home" class="mockup-section">
+        <div class="mockup-content">
+            <img class="mockup-image" src="./img/mockup.png" alt="App Mockup">
+
+            <div class="mockup-text">
+                <h1>Ink of The Ancient Stones</h1>
+                <p>Embark on a journey through Mayan history with our interactive app. Uncover secrets, draw glyphs, and help preserve an ancient civilization's legacy. Available Soon on the App Store!</p>
+                <!-- <a href="https://apps.apple.com/app/idYourAppID" target="_blank">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+                </a> -->
+            </div>
+        </div>
+    </div>    
+    
+    <div id="content" class="content">
         <div class="container">
             <section class="drawing-board">
                 <img id="placeholder-glyph" src="" alt="Glyph Image" style="display:none;">
@@ -53,6 +78,23 @@
     <div class="loader" style="display: none;"></div>
 
     <div id="imageGrid" class="image-grid">
+    </div>
+
+    <div class="app-store-section">
+        <!-- <h3>Experience the Adventure!</h3> -->
+        <!-- <p>Download the app and explore the world of Mayan glyphs. Start your journey in preserving ancient history!</p> -->
+        <!-- <a href="https://apps.apple.com/app/idYourAppID" target="_blank">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+        </a> -->
+
+        <footer>
+            <p>&copy; 2024 Ink of The Ancient Stones. All rights reserved.</p>
+            <p>
+                <a href="./pages/privacy/index.html">Privacy Policy</a> | 
+                <a href="./pages/terms/index.html">Terms of Use</a>
+            </p>
+            
+        </footer>
     </div>
 </body>
 

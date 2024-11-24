@@ -388,4 +388,27 @@ canvas.addEventListener("touchcancel", (e) => {
     isDrawing = false;
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+
+    navMenu.addEventListener("click", (event) => {
+        if (event.target.tagName === "A") {
+            navMenu.classList.remove("active");
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            navMenu.classList.remove("active");
+        }
+    });
+});
+
+
+
 fetchImages();
